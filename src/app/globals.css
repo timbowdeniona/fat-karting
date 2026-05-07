@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --color-asphalt: #0B0E14;
+  --color-race-red: #FF3E3E;
+  --color-electric-blue: #2E5BFF;
+  
+  --color-surface-elevated: #151921;
+  --color-surface-card: #1c222d;
+  
+  --font-heading: "Outfit", sans-serif;
+  --font-body: "Inter", sans-serif;
+  
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+  --animate-race-stripe: race-stripe 10s linear infinite;
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 10px rgba(255, 62, 62, 0.2);
+    }
+    to {
+      box-shadow: 0 0 20px rgba(255, 62, 62, 0.5);
+    }
+  }
+
+  @keyframes race-stripe {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 40px 0;
+    }
+  }
+}
+
+:root {
+  --background: #0B0E14;
+  --foreground: #F8FAFC;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.025em;
+}
+
+.nitro-card {
+  background: rgba(21, 25, 33, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+}
+
+.nitro-gradient-text {
+  background: linear-gradient(135deg, #FF3E3E 0%, #2E5BFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nitro-border-glow {
+  position: relative;
+}
+
+.nitro-border-glow::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, rgba(255, 62, 62, 0.3), rgba(46, 91, 255, 0.3));
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nitro-border-glow:hover::after {
+  opacity: 1;
+}
