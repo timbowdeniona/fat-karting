@@ -3,7 +3,7 @@ import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { RaceEngineerSidebar } from "@/components/ai/RaceEngineerSidebar";
+import { RAGCorpusSidebar } from "@/components/ai/RAGCorpusSidebar";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -33,7 +33,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <RaceEngineerSidebar />
+        <RAGCorpusSidebar />
       </body>
     </html>
   );

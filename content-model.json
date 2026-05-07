@@ -1,0 +1,28 @@
+{
+  "contentTypes": [
+    {
+      "name": "Hub",
+      "id": "hub",
+      "displayField": "name",
+      "fields": [
+        { "id": "name", "name": "Hub Name", "type": "Symbol", "required": true },
+        { "id": "slug", "name": "Slug", "type": "Symbol", "required": true },
+        { "id": "location", "name": "Coordinates", "type": "Location" },
+        { "id": "description", "name": "Description", "type": "RichText" },
+        { "id": "trackImage", "name": "Track Layout Image", "type": "Link", "linkType": "Asset" }
+      ]
+    },
+    {
+      "name": "Race Event",
+      "id": "raceEvent",
+      "displayField": "title",
+      "fields": [
+        { "id": "title", "name": "Event Title", "type": "Symbol", "required": true },
+        { "id": "slug", "name": "Slug", "type": "Symbol" },
+        { "id": "date", "name": "Race Date", "type": "Date" },
+        { "id": "vivenuId", "name": "Vivenu Event ID", "type": "Symbol", "helpText": "Link to the specific Vivenu ticket shop" },
+        { "id": "hub", "name": "Hub Location", "type": "Link", "linkType": "Entry" }
+      ]
+    }
+  ]
+}

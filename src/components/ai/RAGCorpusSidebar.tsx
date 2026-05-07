@@ -6,7 +6,7 @@ import { Sparkles, X, MessageSquare, Send, BookOpen, ChevronRight } from "lucide
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-export function RaceEngineerSidebar() {
+export function RAGCorpusSidebar() {
   const [isOpen, setIsOpen] = useState(false);
   const [rulebookUrl, setRulebookUrl] = useState("");
   const [isIngested, setIsIngested] = useState(false);
