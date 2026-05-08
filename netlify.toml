@@ -1,6 +1,10 @@
 [build]
   command = "npm run build"
-  publish = ".next"
+
+# The Next.js Runtime (v5) is automatically used by Netlify, 
+# so we don't strictly need to specify the plugin here, 
+# but keeping it doesn't hurt. 
+# We removed 'publish = ".next"' as it conflicts with Turbopack on Netlify.
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"

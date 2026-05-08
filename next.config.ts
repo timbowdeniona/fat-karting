@@ -9,11 +9,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // Explicitly set the Turbopack root to ignore the home-level package-lock.json
-  // @ts-ignore - Turbopack config
-  turbopack: {
-    root: "/home/timbowden/dev/fat-karting",
-  },
+  // Remove hardcoded Turbopack root to allow it to be detected automatically in CI/CD environments.
+
 };
 
 export default nextConfig;
