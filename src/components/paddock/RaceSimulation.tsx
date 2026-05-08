@@ -236,7 +236,7 @@ export function RaceSimulation({ onComplete, onClose }: { onComplete: () => void
           <div className="bg-surface-elevated/80 backdrop-blur-md p-6 rounded-2xl border border-white/5 space-y-4 w-64">
             <div className="flex items-center justify-between">
               <span className="text-[10px] text-slate-500 uppercase font-black">Motor State</span>
-              <Badge variant="emerald" className="h-4 text-[8px]">ACTIVE</Badge>
+              <Badge variant="green" className="h-4 text-[8px]">ACTIVE</Badge>
             </div>
             <div className="flex items-center justify-between">
               <span className="text-[10px] text-slate-500 uppercase font-black">Diff Lock</span>
