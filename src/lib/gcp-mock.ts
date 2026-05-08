@@ -15,16 +15,26 @@ export async function getMockRaceData(eventId: string) {
 }
 
 // Simulated Firestore subscription for leaderboard
-export function subscribeToLeaderboard(callback: (data: Driver[]) => void) {
+export function subscribeToLeaderboard(callback: (data: Driver[]) => void, region?: string) {
+  const filterByRegion = (data: Driver[]) => {
+    return region && region !== "Global" ? data.filter(d => d.region === region) : data;
+  };
+
   // Return initial data
-  callback(MOCK_LEADERBOARD);
+  callback(filterByRegion(MOCK_LEADERBOARD));
 
   // Simulate real-time updates every 15 seconds
   const interval = setInterval(() => {
-    const updated = MOCK_LEADERBOARD.map(driver => ({
+    let updated = MOCK_LEADERBOARD.map(driver => ({
       ...driver,
       points: driver.points + Math.floor(Math.random() * 5)
     })).sort((a, b) => b.points - a.points);
+    
+    // Re-assign ranks based on filtered list
+    updated = filterByRegion(updated).map((driver, index) => ({
+      ...driver,
+      rank: index + 1
+    }));
     
     callback(updated);
   }, 15000);

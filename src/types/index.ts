@@ -30,5 +30,6 @@ export interface Driver {
   trend: "up" | "down" | "neutral";
   wins: number;
   podiums: number;
+  region: string;
   avatar?: string;
 }

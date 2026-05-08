@@ -7,15 +7,15 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/Card";
 import { Trophy, TrendingUp, TrendingDown, Minus } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export function Leaderboard({ limit }: { limit?: number }) {
+export function Leaderboard({ limit, region }: { limit?: number, region?: string }) {
   const [drivers, setDrivers] = useState<Driver[]>([]);
 
   useEffect(() => {
     const unsubscribe = subscribeToLeaderboard((data) => {
       setDrivers(limit ? data.slice(0, limit) : data);
-    });
+    }, region);
     return () => unsubscribe();
-  }, [limit]);
+  }, [limit, region]);
 
   return (
     <Card className="bg-surface-elevated/50 backdrop-blur-xl border-white/5 overflow-hidden">

@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { Badge } from "@/components/ui/Badge";
+import { TrackDiagram } from "./TrackDiagram";
 
 interface Telemetry {
   speed: number;
@@ -140,6 +141,14 @@ export function RaceSimulation({ onComplete, onClose }: { onComplete: () => void
       {/* Main Content */}
       <div className="relative w-full max-w-6xl aspect-[16/9] flex items-center justify-center">
         
+        {/* Track Diagram Overlay (Middle Left) */}
+        <div className="absolute z-10 top-1/2 -translate-y-1/2 left-[5%] w-64 h-40 bg-surface-elevated/40 backdrop-blur-md rounded-2xl border border-white/5 overflow-hidden shadow-2xl">
+          <TrackDiagram 
+            progress={telemetry.progress % 100} 
+            className="w-full h-full p-2"
+          />
+        </div>
+
         {/* Central Kart Diagram */}
         <div className="relative w-[60%] aspect-square">
           <motion.div 
