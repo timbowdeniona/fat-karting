@@ -79,12 +79,12 @@ export default function ArchitecturePage() {
           
           {/* Connector Lines (Desktop Only) */}
           <div className="hidden md:block absolute inset-0 -z-10">
-            <svg className="w-full h-full" viewBox="0 0 1000 600" fill="none">
+            <svg className="w-full h-full" viewBox="0 0 1000 1000" fill="none" preserveAspectRatio="none">
               <motion.path 
                 initial={{ pathLength: 0, opacity: 0 }}
                 animate={{ pathLength: 1, opacity: 0.2 }}
                 transition={{ duration: 2, delay: 1 }}
-                d="M500 150 L500 300 M500 300 L200 450 M500 300 L800 450" 
+                d="M500 100 L500 500 M167 500 L833 500 M500 500 L167 900 M500 500 L833 900" 
                 stroke="white" 
                 strokeWidth="2" 
                 strokeDasharray="8 8"

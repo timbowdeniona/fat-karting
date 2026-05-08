@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { GlowEffect } from "@/components/ui/GlowEffect";
 import { Badge } from "@/components/ui/Badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
@@ -12,13 +15,27 @@ import {
   Bell,
   Star,
   User,
-  Calendar
+  Calendar,
+  Play
 } from "lucide-react";
 import Image from "next/image";
+import { RaceSimulation } from "@/components/paddock/RaceSimulation";
+import { AnimatePresence } from "framer-motion";
 
 export default function PaddockPage() {
+  const [isRacing, setIsRacing] = useState(false);
+
   return (
     <div className="relative min-h-screen pb-32">
+      <AnimatePresence mode="wait">
+        {isRacing && (
+          <RaceSimulation 
+            onClose={() => setIsRacing(false)} 
+            onComplete={() => setIsRacing(false)} 
+          />
+        )}
+      </AnimatePresence>
+
       <GlowEffect color="blue" position="top" className="opacity-20" />
       
       {/* Header / Profile */}
@@ -34,7 +51,7 @@ export default function PaddockPage() {
               />
             </div>
             <div>
-              <h1 className="text-2xl font-black italic uppercase tracking-tighter">Alex Apex</h1>
+              <h1 className="text-2xl font-black italic uppercase tracking-tighter text-white">Alex Apex</h1>
               <div className="flex items-center space-x-2">
                 <Badge variant="red" className="px-1.5 h-5">PRO</Badge>
                 <span className="text-xs text-slate-500 uppercase tracking-widest font-bold">Lvl 42</span>
@@ -52,28 +69,28 @@ export default function PaddockPage() {
           <Card className="bg-surface-elevated border-white/5">
             <CardContent className="p-4">
               <Trophy className="w-4 h-4 text-yellow-400 mb-2" />
-              <div className="text-xl font-black italic">1st</div>
+              <div className="text-xl font-black italic text-white">1st</div>
               <div className="text-[10px] text-slate-500 uppercase font-bold tracking-widest">League Rank</div>
             </CardContent>
           </Card>
           <Card className="bg-surface-elevated border-white/5">
             <CardContent className="p-4">
               <Zap className="w-4 h-4 text-electric-blue mb-2" />
-              <div className="text-xl font-black italic">485</div>
+              <div className="text-xl font-black italic text-white">485</div>
               <div className="text-[10px] text-slate-500 uppercase font-bold tracking-widest">Total Pts</div>
             </CardContent>
           </Card>
           <Card className="bg-surface-elevated border-white/5">
             <CardContent className="p-4">
               <BarChart3 className="w-4 h-4 text-race-red mb-2" />
-              <div className="text-xl font-black italic">12.4%</div>
+              <div className="text-xl font-black italic text-white">12.4%</div>
               <div className="text-[10px] text-slate-500 uppercase font-bold tracking-widest">Win Rate</div>
             </CardContent>
           </Card>
           <Card className="bg-surface-elevated border-white/5">
             <CardContent className="p-4">
               <Star className="w-4 h-4 text-emerald-400 mb-2" />
-              <div className="text-xl font-black italic">8</div>
+              <div className="text-xl font-black italic text-white">8</div>
               <div className="text-[10px] text-slate-500 uppercase font-bold tracking-widest">Podiums</div>
             </CardContent>
           </Card>
@@ -84,7 +101,7 @@ export default function PaddockPage() {
           {/* Main Dashboard */}
           <div className="lg:col-span-2 space-y-8">
             <div>
-              <h2 className="text-xl font-black italic uppercase tracking-tighter mb-4 flex items-center">
+              <h2 className="text-xl font-black italic uppercase tracking-tighter mb-4 flex items-center text-white">
                 <History className="w-5 h-5 mr-2 text-race-red" />
                 Recent Activity
               </h2>
@@ -100,7 +117,7 @@ export default function PaddockPage() {
                         {item.pos}
                       </div>
                       <div>
-                        <div className="font-bold">{item.race}</div>
+                        <div className="font-bold text-white">{item.race}</div>
                         <div className="text-xs text-slate-500 uppercase tracking-widest font-bold">{item.date}</div>
                       </div>
                     </div>
@@ -113,7 +130,7 @@ export default function PaddockPage() {
               </div>
             </div>
             
-            <Button variant="outline" className="w-full h-16 border-dashed border-2 hover:bg-white/5">
+            <Button variant="outline" className="w-full h-16 border-dashed border-2 hover:bg-white/5 text-slate-400">
               View All Results
             </Button>
           </div>
@@ -122,22 +139,28 @@ export default function PaddockPage() {
           <div className="space-y-8">
             <Card className="bg-race-red/10 border-race-red/20 shadow-[0_0_30px_rgba(255,62,62,0.1)]">
               <CardHeader>
-                <CardTitle className="text-lg">Next Race</CardTitle>
+                <CardTitle className="text-lg text-white">Next Race</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-black italic uppercase mb-2">Night Circuit Bash</div>
+                <div className="text-2xl font-black italic uppercase mb-2 text-white">Night Circuit Bash</div>
                 <div className="text-xs text-race-red font-bold uppercase tracking-widest mb-6">Starts in: 04d 12h 30m</div>
-                <Button className="w-full">Race Briefing</Button>
+                <div className="space-y-3">
+                  <Button className="w-full h-14 bg-race-red hover:bg-race-red/80 text-white font-black italic uppercase tracking-tight text-lg shadow-[0_0_20px_rgba(255,62,62,0.3)] group" onClick={() => setIsRacing(true)}>
+                    <Play className="w-5 h-5 mr-2 fill-current group-hover:scale-110 transition-transform" />
+                    Start Race Sim
+                  </Button>
+                  <Button variant="outline" className="w-full h-12 border-white/10 text-slate-400 hover:text-white">Race Briefing</Button>
+                </div>
               </CardContent>
             </Card>
 
             <div className="space-y-4">
               <h3 className="text-xs font-bold uppercase tracking-widest text-slate-500 px-1">Settings</h3>
-              <Button variant="ghost" className="w-full justify-between h-14 bg-surface-elevated px-6 hover:bg-white/5">
+              <Button variant="ghost" className="w-full justify-between h-14 bg-surface-elevated px-6 hover:bg-white/5 text-white">
                 <span className="flex items-center"><User className="w-4 h-4 mr-3" /> Profile Settings</span>
                 <ChevronRight className="w-4 h-4 opacity-50" />
               </Button>
-              <Button variant="ghost" className="w-full justify-between h-14 bg-surface-elevated px-6 hover:bg-white/5">
+              <Button variant="ghost" className="w-full justify-between h-14 bg-surface-elevated px-6 hover:bg-white/5 text-white">
                 <span className="flex items-center"><Settings className="w-4 h-4 mr-3" /> Notification Preferences</span>
                 <ChevronRight className="w-4 h-4 opacity-50" />
               </Button>
