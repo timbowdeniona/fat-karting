@@ -16,7 +16,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "FAT Karting League | Nitro-Powered Racing",
+  title: "FAT Karting League | Electro-Powered Racing",
   description: "The ultimate karting league experience. High-performance racing, real-time leaderboards, and exclusive driver insights.",
 };
 

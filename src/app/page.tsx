@@ -31,10 +31,10 @@ export default async function Home() {
         </div>
 
         <div className="container mx-auto px-4 relative z-10 text-center">
-          <Badge variant="red" className="mb-6 px-4 py-1.5 text-sm tracking-widest uppercase">Season 2026 Now Live</Badge>
+          <Badge variant="blue" className="mb-6 px-4 py-1.5 text-sm tracking-widest uppercase">Season 2026 Now Live</Badge>
           <h1 className="text-5xl md:text-8xl font-black italic tracking-tighter uppercase mb-8 leading-[0.9]">
-            Nitro-Powered <br />
-            <span className="nitro-gradient-text">Karting League</span>
+            Electro-Powered <br />
+            <span className="electro-gradient-text">Karting League</span>
           </h1>
           <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10">
             Join the UK's most competitive amateur karting circuit. Professional tracks, real-time data, and a community built on pure speed.

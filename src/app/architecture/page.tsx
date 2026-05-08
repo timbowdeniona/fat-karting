@@ -20,7 +20,7 @@ const components = [
     title: "Frontend Layer",
     icon: Globe,
     tech: "Next.js 15 (App Router)",
-    desc: "Nitro design system built with Tailwind CSS v4 and Framer Motion for high-performance interactions.",
+    desc: "Electro design system built with Tailwind CSS v4 and Framer Motion for high-performance interactions.",
     color: "blue",
     pos: "top"
   },
@@ -66,7 +66,7 @@ export default function ArchitecturePage() {
       <section className="container mx-auto px-4 pt-20 mb-20 text-center">
         <Badge variant="outline" className="mb-6">System Overview</Badge>
         <h1 className="text-4xl md:text-7xl font-black italic uppercase tracking-tighter mb-6">
-          Nitro <span className="nitro-gradient-text">Architecture</span>
+          Electro <span className="electro-gradient-text">Architecture</span>
         </h1>
         <p className="text-lg text-slate-400 max-w-2xl mx-auto">
           A modern MACH-based solution engineered for speed, scalability, and seamless integration.

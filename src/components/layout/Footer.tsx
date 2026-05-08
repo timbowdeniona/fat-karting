@@ -38,7 +38,7 @@ export function Footer() {
         </div>
         
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-slate-500 text-xs">
-          <p>© {new Date().getFullYear()} FAT Karting League. Built with Nitro Architecture.</p>
+          <p>© {new Date().getFullYear()} FAT Karting League. Built with Electro Architecture.</p>
           <p className="mt-4 md:mt-0">Design by Stitch • Powered by Next.js</p>
         </div>
       </div>

@@ -27,7 +27,7 @@ The app follows the MACH architecture principle:
 - **C**loud-native: Designed for deployment on GCP.
 - **H**eadless: Decoupled CMS and Ticketing layers.
 
-## 'Nitro' Design System
+## 'Electro' Design System
 - **Asphalt**: `#0B0E14` (Background)
 - **Race Red**: `#FF3E3E` (Accents / CTAs)
 - **Electric Blue**: `#2E5BFF` (Secondary accents)

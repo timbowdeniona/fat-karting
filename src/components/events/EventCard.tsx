@@ -8,7 +8,7 @@ import { Calendar, MapPin, ArrowRight } from "lucide-react";
 export function EventCard({ event }: { event: RaceEvent }) {
   return (
     <Link href={`/events/${event.slug}`} className="group">
-      <Card className="h-full nitro-border-glow transition-all duration-500 hover:-translate-y-2">
+      <Card className="h-full electro-border-glow transition-all duration-500 hover:-translate-y-2">
         <div className="relative h-48 w-full overflow-hidden">
           <Image
             src={event.image}

@@ -8,7 +8,7 @@ export async function getMockRaceData(eventId: string) {
     lapTimes: [
       { driver: "Apex Miller", time: "42.5s" },
       { driver: "Slipstream Jones", time: "42.8s" },
-      { driver: "Nitro Webb", time: "43.1s" },
+      { driver: "Electro Webb", time: "43.1s" },
     ],
     lastUpdated: new Date().toISOString(),
   };

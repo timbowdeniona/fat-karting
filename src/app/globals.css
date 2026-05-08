@@ -51,34 +51,34 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.025em;
 }
 
-.nitro-card {
+.electro-card {
   background: rgba(21, 25, 33, 0.8);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 1rem;
 }
 
-.nitro-gradient-text {
-  background: linear-gradient(135deg, #FF3E3E 0%, #2E5BFF 100%);
+.electro-gradient-text {
+  background: linear-gradient(135deg, #2E5BFF 0%, #00D1FF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.nitro-border-glow {
+.electro-border-glow {
   position: relative;
 }
 
-.nitro-border-glow::after {
+.electro-border-glow::after {
   content: "";
   position: absolute;
   inset: -1px;
-  background: linear-gradient(135deg, rgba(255, 62, 62, 0.3), rgba(46, 91, 255, 0.3));
+  background: linear-gradient(135deg, rgba(46, 91, 255, 0.3), rgba(0, 209, 255, 0.3));
   z-index: -1;
   border-radius: inherit;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-.nitro-border-glow:hover::after {
+.electro-border-glow:hover::after {
   opacity: 1;
 }

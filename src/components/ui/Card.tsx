@@ -8,7 +8,7 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "nitro-card overflow-hidden",
+      "electro-card overflow-hidden",
       className
     )}
     {...props}
